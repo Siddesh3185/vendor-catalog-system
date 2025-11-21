@@ -73,45 +73,45 @@ A comprehensive *Vendor Catalog System* designed for procurement teams and B2B p
 
 ---
 
-## 📁 Project Structure
+## 🏗 Directory Structure
 
 
 vendor-catalog-system/
 │
-├── 🗂 backend/
-│   ├── 🛠 config/
+├── 📁 backend/
+│   ├── 📁 config/
 │   │   └── database.js
-│   ├── 🎮 controllers/
+│   ├── 📁 controllers/
 │   │   ├── vendorController.js
 │   │   ├── productController.js
 │   │   └── contactController.js
-│   ├── 🏷 models/
+│   ├── 📁 models/
 │   │   ├── Vendor.js
 │   │   ├── Product.js
 │   │   └── Contact.js
-│   ├── 🛣 routes/
+│   ├── 📁 routes/
 │   │   ├── vendorRoutes.js
 │   │   ├── productRoutes.js
 │   │   └── contactRoutes.js
-│   ├── ⚙ middleware/
+│   ├── 📁 middleware/
 │   │   ├── validation.js
 │   │   └── errorHandler.js
-│   ├── 🔧 utils/
+│   ├── 📁 utils/
 │   │   └── helpers.js
 │   └── server.js
 │
-├── 🎨 frontend/
+├── 📁 frontend/
 │   ├── 📁 public/
-│   │   ├── 🎨 css/
+│   │   ├── 📁 css/
 │   │   │   ├── style.css
 │   │   │   ├── vendor.css
 │   │   │   └── responsive.css
-│   │   ├── ⚡ js/
+│   │   ├── 📁 js/
 │   │   │   ├── main.js
 │   │   │   ├── vendor.js
 │   │   │   └── product.js
-│   │   └── 🖼 images/
-│   ├── 📄 views/
+│   │   └── 📁 images/
+│   ├── 📁 views/
 │   │   ├── index.html
 │   │   ├── vendors.html
 │   │   ├── vendor-detail.html
@@ -119,17 +119,17 @@ vendor-catalog-system/
 │   │   └── contacts.html
 │   └── package.json
 │
-├── 🗃 database/
+├── 📁 database/
 │   ├── schema.sql
 │   └── sample-data.sql
 │
-├── 📚 docs/
+├── 📁 docs/
 │   ├── API_Documentation.md
 │   └── User_Guide.md
 │
-├── 🔧 .env.example
-├── 📦 package.json
-└── 📖 README.md
+├── .env.example
+├── package.json
+└── README.md
 
 
 ---
@@ -380,3 +380,4 @@ This project is licensed under the *MIT License* - see the [LICENSE](LICENSE) fi
 </div>
 
 ---
+
