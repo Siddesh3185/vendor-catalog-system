@@ -1,383 +1,503 @@
 # 🏢 Vendor Catalog System
 
-> *Manage vendors, their products, and contact persons. Useful for procurement teams or B2B platforms. Shows multi-model CRUD with parent/child relationships.*
+<div align="center">
 
----
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-## 📑 Table of Contents
-- [Project Overview](#-project-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Setup Instructions](#-setup-instructions)
-- [API Documentation](#-api-documentation)
-- [Roadmap](#-roadmap)
-- [Database Schema](#-database-schema)
-- [Contributing](#-contributing)
-- [License](#-license)
+A comprehensive Vendor Management System for procurement teams and B2B platforms
 
----
+[Live Demo](#) • [Documentation](#) • [Report Bug](#) • [Request Feature](#)
 
-## 🎯 Project Overview
+</div>
 
-A comprehensive *Vendor Catalog System* designed for procurement teams and B2B platforms. This system enables efficient management of vendors, their products, and contact persons with full CRUD operations and parent/child relationships.
+## 📖 Table of Contents
 
-### 🎪 Key Highlights
-- ✅ *Multi-model CRUD operations*
-- ✅ *Hierarchical data relationships*
-- ✅ *RESTful API architecture*
-- ✅ *Responsive web interface*
-- ✅ *MySQL database with relationships*
-- ✅ *Vendor → Products → Contacts hierarchy*
+- [About the Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Database Schema](#database-schema)
+- [API Documentation](#api-documentation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
----
+## 🎯 About The Project
 
-## ✨ Features
+![Project Screenshot](https://via.placeholder.com/800x400.png?text=Vendor+Catalog+System+Screenshot)
 
-### 🔧 Core Features
-| Feature | Description | Status |
-|---------|-------------|--------|
-| *Vendor Management* | Complete vendor profile CRUD operations | ✅ Implemented |
-| *Product Catalog* | Organized product listings per vendor | ✅ Implemented |
-| *Contact Management* | Multiple contact persons per vendor | ✅ Implemented |
-| *Search & Filter* | Advanced filtering capabilities | 🚧 In Progress |
-| *Data Export* | Export vendor/product data | 📅 Planned |
+The *Vendor Catalog System* is a robust web application designed to streamline vendor management for procurement teams and B2B platforms. It provides comprehensive CRUD operations for vendors, their products, and contact persons with hierarchical relationships.
 
-### 🛡 Security Features
-- 🔒 Input validation and sanitization
-- 🛡 SQL injection prevention
-- 🔑 XSS protection
-- 📝 CSRF protection
+### ✨ Key Features
 
----
+- *🏢 Vendor Management* - Complete vendor profile management with CRUD operations
+- *📦 Product Catalog* - Organized product listings categorized by vendors
+- *👥 Contact Management* - Multiple contact persons management per vendor
+- *🔍 Advanced Search* - Powerful search and filtering capabilities
+- *📊 Dashboard Analytics* - Vendor and product performance insights
+- *📱 Responsive Design* - Mobile-friendly interface for all devices
 
-## 🛠 Tech Stack
+### 🛠 Built With
 
-### *Frontend*
-- 🎨 *HTML5* - Semantic markup
-- 🎭 *CSS3* - Modern styling with Flexbox/Grid
-- ⚡ *JavaScript* - Client-side interactions
-- 📱 *Responsive Design* - Mobile-first approach
+This project is built using the following technologies:
 
-### *Backend*
-- 🟢 *Node.js* - Runtime environment
-- 🚂 *Express.js* - Web application framework
-- 🗄 *MySQL* - Relational database
-- 🔌 *MySQL2* - MySQL client for Node.js
+#### Frontend
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
-### *Development Tools*
-- 🔧 *Nodemon* - Development server
-- 📦 *npm* - Package management
-- 🌐 *Postman* - API testing
-- 📊 *Workbench* - Database management
+#### Backend
+- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+- ![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
+- ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=flat-square&logo=mysql&logoColor=white)
 
----
+#### Development Tools
+- ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+- ![NPM](https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white)
+- ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
 
-## 🏗 Directory Structure
+## 🚀 Getting Started
 
-
-vendor-catalog-system/
-│
-├── 📁 backend/
-│   ├── 📁 config/
-│   │   └── database.js
-│   ├── 📁 controllers/
-│   │   ├── vendorController.js
-│   │   ├── productController.js
-│   │   └── contactController.js
-│   ├── 📁 models/
-│   │   ├── Vendor.js
-│   │   ├── Product.js
-│   │   └── Contact.js
-│   ├── 📁 routes/
-│   │   ├── vendorRoutes.js
-│   │   ├── productRoutes.js
-│   │   └── contactRoutes.js
-│   ├── 📁 middleware/
-│   │   ├── validation.js
-│   │   └── errorHandler.js
-│   ├── 📁 utils/
-│   │   └── helpers.js
-│   └── server.js
-│
-├── 📁 frontend/
-│   ├── 📁 public/
-│   │   ├── 📁 css/
-│   │   │   ├── style.css
-│   │   │   ├── vendor.css
-│   │   │   └── responsive.css
-│   │   ├── 📁 js/
-│   │   │   ├── main.js
-│   │   │   ├── vendor.js
-│   │   │   └── product.js
-│   │   └── 📁 images/
-│   ├── 📁 views/
-│   │   ├── index.html
-│   │   ├── vendors.html
-│   │   ├── vendor-detail.html
-│   │   ├── products.html
-│   │   └── contacts.html
-│   └── package.json
-│
-├── 📁 database/
-│   ├── schema.sql
-│   └── sample-data.sql
-│
-├── 📁 docs/
-│   ├── API_Documentation.md
-│   └── User_Guide.md
-│
-├── .env.example
-├── package.json
-└── README.md
-
-
----
-
-## 🚀 Setup Instructions
+Follow these instructions to get a copy of the project up and running on your local machine.
 
 ### 📋 Prerequisites
-- *Node.js* (v14 or higher) 🟢
-- *MySQL* (v8.0 or higher) 🗄
-- *npm* or *yarn* 📦
 
-### 🛠 Installation Steps
+Before you begin, ensure you have the following installed:
 
-#### Step 1: Clone Repository
+- *Node.js* (version 14.0 or higher)
+- *MySQL* (version 8.0 or higher)
+- *npm* (comes with Node.js)
+
+### ⚙ Installation
+
+#### Step 1: Clone the Repository
 bash
-git clone <repository-url>
+git clone https://github.com/your-username/vendor-catalog-system.git
 cd vendor-catalog-system
 
 
-#### Step 2: Backend Setup
+#### Step 2: Install Backend Dependencies
 bash
 cd backend
 npm install
 
 
-#### Step 3: Database Configuration
-bash
-# Login to MySQL
-mysql -u root -p
-
-# Create database
+#### Step 3: Database Setup
+1. Start your MySQL server
+2. Create a new database:
+sql
 CREATE DATABASE vendor_catalog;
 
-# Import schema
-USE vendor_catalog;
-SOURCE database/schema.sql;
 
-# Optional: Import sample data
-SOURCE database/sample-data.sql;
-
-
-#### Step 4: Environment Setup
+3. Import the database schema:
 bash
-# Copy environment file
+mysql -u your_username -p vendor_catalog < database/schema.sql
+
+
+#### Step 4: Environment Configuration
+1. Copy the environment file:
+bash
 cp .env.example .env
 
-# Configure your environment variables
+
+2. Update the .env file with your configurations:
+env
 DB_HOST=localhost
-DB_USER=your_username
-DB_PASSWORD=your_password
+DB_USER=your_mysql_username
+DB_PASSWORD=your_mysql_password
 DB_NAME=vendor_catalog
 PORT=3000
+JWT_SECRET=your_jwt_secret_key
 
 
-#### Step 5: Frontend Setup
+#### Step 5: Install Frontend Dependencies
 bash
-cd frontend
+cd ../frontend
 npm install
 
 
-#### Step 6: Start Application
+#### Step 6: Start the Application
+
+*Backend Server:*
 bash
-# Terminal 1 - Backend
 cd backend
 npm start
 
-# Terminal 2 - Frontend  
+
+*Frontend Server (in a new terminal):*
+bash
 cd frontend
 npm run dev
 
 
-#### Step 7: Access Application
-🌐 Open your browser and navigate to:
+#### Step 7: Access the Application
+Open your web browser and navigate to:
 
 http://localhost:3000
 
 
----
-
-## 📡 API Documentation
-
-### 🏢 Vendor Endpoints
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /api/vendors | 📋 List all vendors |
-| GET | /api/vendors/:id | 👁 Get vendor details |
-| POST | /api/vendors | ➕ Create new vendor |
-| PUT | /api/vendors/:id | ✏ Update vendor |
-| DELETE | /api/vendors/:id | 🗑 Delete vendor |
-
-### 📦 Product Endpoints
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /api/vendors/:vendorId/products | 📋 Get vendor's products |
-| POST | /api/vendors/:vendorId/products | ➕ Add product to vendor |
-| PUT | /api/products/:id | ✏ Update product |
-| DELETE | /api/products/:id | 🗑 Delete product |
-
-### 👥 Contact Endpoints
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | /api/vendors/:vendorId/contacts | 📋 Get vendor's contacts |
-| POST | /api/vendors/:vendorId/contacts | ➕ Add contact to vendor |
-| PUT | /api/contacts/:id | ✏ Update contact |
-| DELETE | /api/contacts/:id | 🗑 Delete contact |
-
----
-
-## 🗺 Roadmap
-
-### 🎯 Phase 1: Foundation & Setup (Week 1-2)
-- [x] ✅ Project architecture design
-- [x] ✅ Database schema design
-- [x] ✅ Basic Node.js server setup
-- [x] ✅ HTML/CSS framework implementation
-
-### 🎯 Phase 2: Core Backend (Week 3-4)
-- [ ] 🔄 Vendor CRUD API endpoints
-- [ ] 🔄 Product management APIs  
-- [ ] 🔄 Contact person APIs
-- [ ] 📅 Database relationship implementation
-
-### 🎯 Phase 3: Frontend Development (Week 5-6)
-- [ ] 📅 Vendor management interface
-- [ ] 📅 Product catalog views
-- [ ] 📅 Contact management forms
-- [ ] 📅 Responsive design implementation
-
-### 🎯 Phase 4: Advanced Features (Week 7-8)
-- [ ] 📅 Search and filtering functionality
-- [ ] 📅 Data export capabilities
-- [ ] 📅 Bulk operations
-- [ ] 📅 Advanced form validation
-
-### 🎯 Phase 5: Testing & Deployment (Week 9-10)
-- [ ] 📅 Unit and integration testing
-- [ ] 📅 Security audit
-- [ ] 📅 Performance optimization
-- [ ] 📅 Deployment configuration
-
----
-
 ## 🗃 Database Schema
 
+### 📊 Database Tables Overview
+
+| Table Name | Description | Records |
+|------------|-------------|---------|
+| vendors | Stores vendor information | ~500 |
+| products | Stores product details | ~5,000 |
+| contacts | Stores contact persons | ~1,500 |
+| categories | Product categories | ~50 |
+| orders | Purchase orders | ~2,000 |
+
 ### 🏢 Vendors Table
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| vendor_id | INT | PRIMARY KEY, AUTO_INCREMENT | Unique vendor identifier |
+| name | VARCHAR(255) | NOT NULL | Vendor company name |
+| email | VARCHAR(255) | UNIQUE | Vendor email address |
+| phone | VARCHAR(20) | | Contact number |
+| address | TEXT | | Physical address |
+| city | VARCHAR(100) | | City |
+| state | VARCHAR(100) | | State/Province |
+| country | VARCHAR(100) | | Country |
+| zip_code | VARCHAR(20) | | Postal code |
+| category | VARCHAR(100) | | Vendor category |
+| status | ENUM('active','inactive') | DEFAULT 'active' | Vendor status |
+| created_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP | Record creation timestamp |
+| updated_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP | Last update timestamp |
+
+*Sample Data:*
 sql
-CREATE TABLE vendors (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255),
-    phone VARCHAR(50),
-    address TEXT,
-    category VARCHAR(100),
-    status ENUM('active', 'inactive') DEFAULT 'active',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+INSERT INTO vendors (name, email, phone, address, category) VALUES
+('Tech Solutions Inc.', 'contact@techsolutions.com', '+1-555-0101', '123 Tech Park', 'IT Services'),
+('Global Supplies Ltd.', 'info@globalsupplies.com', '+1-555-0102', '456 Business Ave', 'Manufacturing');
 
 
 ### 📦 Products Table
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| product_id | INT | PRIMARY KEY, AUTO_INCREMENT | Unique product identifier |
+| vendor_id | INT | FOREIGN KEY | References vendors(vendor_id) |
+| name | VARCHAR(255) | NOT NULL | Product name |
+| description | TEXT | | Product description |
+| category | VARCHAR(100) | | Product category |
+| price | DECIMAL(10,2) | NOT NULL | Unit price |
+| currency | VARCHAR(3) | DEFAULT 'USD' | Currency code |
+| unit | VARCHAR(50) | | Measurement unit (pcs, kg, etc.) |
+| stock_quantity | INT | DEFAULT 0 | Available stock |
+| min_order_quantity | INT | DEFAULT 1 | Minimum order quantity |
+| sku | VARCHAR(100) | UNIQUE | Stock keeping unit |
+| image_url | VARCHAR(500) | | Product image URL |
+| is_active | BOOLEAN | DEFAULT TRUE | Product status |
+| created_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP | Record creation timestamp |
+
+*Sample Data:*
 sql
-CREATE TABLE products (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    vendor_id INT,
-    name VARCHAR(255) NOT NULL,
-    description TEXT,
-    category VARCHAR(100),
-    price DECIMAL(10,2),
-    unit VARCHAR(50),
-    stock_quantity INT,
-    sku VARCHAR(100),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (vendor_id) REFERENCES vendors(id) ON DELETE CASCADE
-);
+INSERT INTO products (vendor_id, name, description, category, price, stock_quantity, sku) VALUES
+(1, 'Laptop Pro', 'High-performance business laptop', 'Electronics', 1200.00, 50, 'LP-001'),
+(1, 'Wireless Mouse', 'Ergonomic wireless mouse', 'Accessories', 25.99, 200, 'WM-001');
 
 
 ### 👥 Contacts Table
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| contact_id | INT | PRIMARY KEY, AUTO_INCREMENT | Unique contact identifier |
+| vendor_id | INT | FOREIGN KEY | References vendors(vendor_id) |
+| first_name | VARCHAR(100) | NOT NULL | Contact first name |
+| last_name | VARCHAR(100) | NOT NULL | Contact last name |
+| email | VARCHAR(255) | | Email address |
+| phone | VARCHAR(20) | | Phone number |
+| department | VARCHAR(100) | | Department name |
+| position | VARCHAR(100) | | Job position |
+| is_primary | BOOLEAN | DEFAULT FALSE | Primary contact flag |
+| notes | TEXT | | Additional notes |
+| created_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP | Record creation timestamp |
+
+*Sample Data:*
 sql
-CREATE TABLE contacts (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    vendor_id INT,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255),
-    phone VARCHAR(50),
-    department VARCHAR(100),
-    is_primary BOOLEAN DEFAULT FALSE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (vendor_id) REFERENCES vendors(id) ON DELETE CASCADE
-);
+INSERT INTO contacts (vendor_id, first_name, last_name, email, department, position, is_primary) VALUES
+(1, 'John', 'Smith', 'john.smith@techsolutions.com', 'Sales', 'Account Manager', TRUE),
+(1, 'Sarah', 'Johnson', 'sarah.j@techsolutions.com', 'Support', 'Technical Support', FALSE);
 
 
----
+### 📑 Categories Table
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| category_id | INT | PRIMARY KEY, AUTO_INCREMENT | Unique category identifier |
+| name | VARCHAR(100) | NOT NULL, UNIQUE | Category name |
+| description | TEXT | | Category description |
+| parent_id | INT | FOREIGN KEY | Parent category (for hierarchy) |
+| is_active | BOOLEAN | DEFAULT TRUE | Category status |
+| created_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP | Record creation timestamp |
+
+### 📋 Orders Table
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| order_id | INT | PRIMARY KEY, AUTO_INCREMENT | Unique order identifier |
+| vendor_id | INT | FOREIGN KEY | References vendors(vendor_id) |
+| order_date | DATE | NOT NULL | Order placement date |
+| delivery_date | DATE | | Expected delivery date |
+| total_amount | DECIMAL(10,2) | NOT NULL | Order total amount |
+| status | ENUM('pending','confirmed','shipped','delivered','cancelled') | DEFAULT 'pending' | Order status |
+| notes | TEXT | | Order notes |
+| created_at | TIMESTAMP | DEFAULT CURRENT_TIMESTAMP | Record creation timestamp |
+
+### 🔗 Table Relationships
+
+mermaid
+erDiagram
+    VENDORS ||--o{ PRODUCTS : has
+    VENDORS ||--o{ CONTACTS : has
+    VENDORS ||--o{ ORDERS : receives
+    CATEGORIES ||--o{ PRODUCTS : categorizes
+    VENDORS {
+        int vendor_id PK
+        varchar name
+        varchar email
+        varchar phone
+        text address
+        varchar category
+        enum status
+    }
+    PRODUCTS {
+        int product_id PK
+        int vendor_id FK
+        varchar name
+        text description
+        decimal price
+        int stock_quantity
+        varchar sku
+    }
+    CONTACTS {
+        int contact_id PK
+        int vendor_id FK
+        varchar first_name
+        varchar last_name
+        varchar email
+        varchar department
+        boolean is_primary
+    }
+
+
+## 📡 API Documentation
+
+### 🔑 Authentication Endpoints
+
+| Method | Endpoint | Description | Parameters |
+|--------|----------|-------------|------------|
+| POST | /api/auth/login | User login | email, password |
+| POST | /api/auth/register | User registration | name, email, password |
+| POST | /api/auth/logout | User logout | - |
+
+### 🏢 Vendor Endpoints
+
+| Method | Endpoint | Description | Parameters | Response |
+|--------|----------|-------------|------------|----------|
+| GET | /api/vendors | Get all vendors | page, limit, search | Vendor list |
+| POST | /api/vendors | Create new vendor | Vendor object | New vendor |
+| GET | /api/vendors/:id | Get vendor by ID | id | Vendor details |
+| PUT | /api/vendors/:id | Update vendor | id, Vendor object | Updated vendor |
+| DELETE | /api/vendors/:id | Delete vendor | id | Success message |
+| GET | /api/vendors/:id/products | Get vendor's products | id | Product list |
+| GET | /api/vendors/:id/contacts | Get vendor's contacts | id | Contact list |
+
+### 📦 Product Endpoints
+
+| Method | Endpoint | Description | Parameters | Response |
+|--------|----------|-------------|------------|----------|
+| GET | /api/products | Get all products | page, limit, category | Product list |
+| POST | /api/vendors/:id/products | Add product | id, Product object | New product |
+| GET | /api/products/:id | Get product by ID | id | Product details |
+| PUT | /api/products/:id | Update product | id, Product object | Updated product |
+| DELETE | /api/products/:id | Delete product | id | Success message |
+| GET | /api/products/search | Search products | query, filters | Search results |
+
+### 👥 Contact Endpoints
+
+| Method | Endpoint | Description | Parameters | Response |
+|--------|----------|-------------|------------|----------|
+| GET | /api/contacts | Get all contacts | page, limit | Contact list |
+| POST | /api/vendors/:id/contacts | Add contact | id, Contact object | New contact |
+| GET | /api/contacts/:id | Get contact by ID | id | Contact details |
+| PUT | /api/contacts/:id | Update contact | id, Contact object | Updated contact |
+| DELETE | /api/contacts/:id | Delete contact | id | Success message |
+
+### 📊 Sample API Requests
+
+*Get All Vendors:*
+bash
+curl -X GET "http://localhost:3000/api/vendors?page=1&limit=10" \
+  -H "Content-Type: application/json"
+
+
+*Create New Vendor:*
+bash
+curl -X POST "http://localhost:3000/api/vendors" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "New Vendor Inc.",
+    "email": "info@newvendor.com",
+    "phone": "+1-555-0199",
+    "address": "789 Business Street",
+    "category": "Technology"
+  }'
+
+
+*Get Vendor's Products:*
+bash
+curl -X GET "http://localhost:3000/api/vendors/1/products" \
+  -H "Content-Type: application/json"
+
+
+## 💻 Usage
+
+### 🔧 Admin Features
+1. *Vendor Management*
+   - Add new vendors with complete details
+   - Update vendor information
+   - Deactivate/activate vendors
+   - View vendor performance metrics
+
+2. *Product Catalog*
+   - Manage products for each vendor
+   - Set pricing and inventory levels
+   - Categorize products for easy search
+   - Bulk product operations
+
+3. *Contact Management*
+   - Add multiple contact persons per vendor
+   - Set primary contacts
+   - Manage department-wise contacts
+
+### 🔍 Search & Filter
+- Search vendors by name, category, or location
+- Filter products by price range, category, or availability
+- Advanced search with multiple criteria
+
+## 🗺 Roadmap
+
+### ✅ Completed Features
+- [x] Basic vendor CRUD operations
+- [x] Product management system
+- [x] Contact person management
+- [x] Database schema design
+- [x] RESTful API development
+
+### 🚧 In Progress
+- [ ] Advanced search functionality
+- [ ] Bulk operations
+- [ ] Data export features
+- [ ] Dashboard analytics
+
+### 📅 Planned Features
+- [ ] User authentication & authorization
+- [ ] Email notifications
+- [ ] Mobile application
+- [ ] API rate limiting
+- [ ] Third-party integrations
+
+See the [open issues](https://github.com/your-username/vendor-catalog-system/issues) for a full list of proposed features and known issues.
 
 ## 🤝 Contributing
 
-We welcome contributions! Please follow these steps:
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are *greatly appreciated*.
 
-### 🔄 Contribution Workflow
-1. 🍴 *Fork* the repository
-2. 🌿 *Create* your feature branch (git checkout -b feature/AmazingFeature)
-3. 💾 *Commit* your changes (git commit -m 'Add some AmazingFeature')
-4. 📤 *Push* to the branch (git push origin feature/AmazingFeature)
-5. 🔃 *Open* a Pull Request
+### 📝 How to Contribute
 
-### 📝 Contribution Guidelines
-- ✅ Write clear commit messages
-- ✅ Update documentation as needed
-- ✅ Add tests for new features
-- ✅ Ensure code follows project style guidelines
+1. *Fork the Project*
+2. *Create your Feature Branch* 
+   bash
+   git checkout -b feature/AmazingFeature
+   
+3. *Commit your Changes*
+   bash
+   git commit -m 'Add some AmazingFeature'
+   
+4. *Push to the Branch*
+   bash
+   git push origin feature/AmazingFeature
+   
+5. *Open a Pull Request*
 
----
+### 🏆 Contribution Guidelines
+
+- Follow the existing code style
+- Write clear, descriptive commit messages
+- Update documentation as needed
+- Add tests for new features
+- Ensure all tests pass before submitting
 
 ## 📄 License
 
-This project is licensed under the *MIT License* - see the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See LICENSE for more information.
 
----
+## 📞 Contact
 
-## 🆘 Support
+*Your Name* - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
 
-### 📞 Get Help
-- 📧 *Email*: your-support-email@example.com
-- 🐛 *Issues*: Create an issue in the repository
-- 💬 *Discussions*: Use GitHub discussions for questions
+*Project Link*: [https://github.com/your-username/vendor-catalog-system](https://github.com/your-username/vendor-catalog-system)
 
-### 🏗 Maintainers
-| Name | Role | Contact |
-|------|------|---------|
-| *Your Name* | Project Maintainer | your-email@example.com |
+## 🙏 Acknowledgements
 
----
+We would like to express our gratitude to:
 
-## 🎉 Acknowledgments
+- [Node.js Community](https://nodejs.org/en/)
+- [Express.js Team](https://expressjs.com/)
+- [MySQL Developers](https://www.mysql.com/)
+- [Contributors to this project](#)
 
-- Icons provided by [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet)
-- README template inspired by best practices
+### 📚 Resources
+- [Node.js Documentation](https://nodejs.org/docs/latest/api/)
+- [Express.js Guide](https://expressjs.com/en/guide/routing.html)
+- [MySQL Documentation](https://dev.mysql.com/doc/)
 
 ---
 
 <div align="center">
 
-### ⭐ Don't forget to star this repository if you find it helpful!
+### ⭐ Don't forget to give this project a star if you find it helpful!
 
-*Built with ❤ for procurement teams and B2B platforms*
+*Made with ❤ for the open-source community*
+
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=your-username.vendor-catalog-system)
 
 </div>
 
----
+## 🗂 Project Structure
 
+
+vendor-catalog-system/
+├── 📁 backend/
+│   ├── 📁 config/
+│   ├── 📁 controllers/
+│   ├── 📁 models/
+│   ├── 📁 routes/
+│   ├── 📁 middleware/
+│   └── server.js
+├── 📁 frontend/
+│   ├── 📁 public/
+│   ├── 📁 views/
+│   └── package.json
+├── 📁 database/
+│   ├── schema.sql
+│   ├── sample-data.sql
+│   └── migrations/
+├── 📚 docs/
+│   ├── API_DOCUMENTATION.md
+│   └── USER_GUIDE.md
+└── README.md
+
+
+---
