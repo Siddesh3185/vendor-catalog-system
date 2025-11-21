@@ -6,7 +6,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+
 
 A comprehensive Vendor Management System for procurement teams and B2B platforms
 
@@ -454,7 +454,6 @@ Distributed under the MIT License. See LICENSE for more information.
 We would like to express our gratitude to:
 
 - [Node.js Community](https://nodejs.org/en/)
-- [Express.js Team](https://expressjs.com/)
 - [MySQL Developers](https://www.mysql.com/)
 - [Contributors to this project](#)
 
@@ -501,3 +500,4 @@ vendor-catalog-system/
 
 
 ---
+
