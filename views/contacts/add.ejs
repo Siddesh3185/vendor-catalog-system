@@ -1,0 +1,24 @@
+<%- include('../partials/header', { title: 'Add Contact' }) %>
+
+<div class="page-header">
+  <h1>Add Contact</h1>
+</div>
+
+<div class="table-wrap" style="max-width:720px;margin:0 auto;">
+  <form method="POST" action="/contacts/add">
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <input name="name" placeholder="Full name" required style="flex:1;padding:8px;border-radius:6px;border:1px solid #e6eef7">
+      <input name="email" placeholder="Email" type="email" style="flex:1;padding:8px;border-radius:6px;border:1px solid #e6eef7">
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <input name="phone" placeholder="Phone" style="flex:1;padding:8px;border-radius:6px;border:1px solid #e6eef7">
+      <input name="role" placeholder="Role / Position" style="flex:1;padding:8px;border-radius:6px;border:1px solid #e6eef7">
+    </div>
+    <div style="margin-bottom:12px">
+      <textarea name="notes" placeholder="Notes" style="width:100%;padding:8px;border-radius:6px;border:1px solid #e6eef7" rows="4"></textarea>
+    </div>
+    <button class="btn" type="submit">Create Contact</button>
+  </form>
+</div>
+
+<%- include('../partials/footer') %>

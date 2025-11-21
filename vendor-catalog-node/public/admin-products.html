@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin - Add Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-white border-b">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold">Admin - Products</h1>
+        <p class="text-sm text-slate-600">Create and manage products (admin only)</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/" class="text-slate-600">Dashboard</a>
+        <a href="/products.html" class="text-slate-600">Products</a>
+        <a id="loginLink" href="/login.html" class="text-sm no-auth">Login</a>
+        <button id="logoutBtn" class="text-sm needs-auth" style="background:none;border:none">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <section class="bg-white p-6 rounded shadow mb-6">
+      <h2 class="text-lg font-semibold mb-3">Add Product</h2>
+      <form id="adminProductForm" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <p id="adminFormMsg" class="text-sm text-red-600 col-span-2"></p>
+        <select name="vendor_id" class="border p-2 rounded" required>
+          <option value="">Select vendor</option>
+        </select>
+        <input name="product_name" placeholder="Product name" class="border p-2 rounded" required>
+        <input name="price" placeholder="Price" type="number" class="border p-2 rounded">
+        <input name="moq" placeholder="MOQ" type="number" class="border p-2 rounded">
+        <textarea name="description" placeholder="Description" class="border p-2 rounded md:col-span-2"></textarea>
+        <div class="md:col-span-2 flex gap-2">
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Create</button>
+          <button type="button" id="clearBtn" class="px-4 py-2 rounded border">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg font-semibold mb-3">Existing Products</h2>
+      <div id="adminProductsList" class="grid grid-cols-1 gap-2"></div>
+    </section>
+  </main>
+
+  <script src="/js/auth.js"></script>
+  <script src="/js/admin-products.js"></script>
+</body>
+</html>

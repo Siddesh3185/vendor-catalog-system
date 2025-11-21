@@ -1,0 +1,41 @@
+(/* Base reset and variables */)
+:root{
+	--bg:#f5f7fb;
+	--card:#ffffff;
+	--muted:#6b7280;
+	--primary:#2563eb;
+	--accent:#10b981;
+	--danger:#ef4444;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:#0f172a}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:linear-gradient(90deg, #0f172a, #111827);color:#fff}
+.site-header .brand{font-weight:700;font-size:18px}
+.main-nav a{color:#c7d2fe;margin:0 8px;text-decoration:none}
+.main-nav a:hover{color:#fff}
+.auth-links .btn{margin-left:8px;padding:8px 12px;border-radius:6px;text-decoration:none;color:#fff}
+.auth-links .btn.primary{background:var(--accent)}
+.auth-links .btn.link{background:transparent;border:1px solid rgba(255,255,255,0.08)}
+.content{max-width:1200px;margin:24px auto;padding:0 20px}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cards{display:flex;gap:16px;margin-bottom:18px}
+.card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 4px 14px rgba(15,23,42,0.06);flex:1}
+.card h3{margin:0;font-size:16px}
+.table-wrap{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 4px 14px rgba(15,23,42,0.06)}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px 8px;text-align:left;border-bottom:1px solid #eef2f7}
+th{font-size:13px;color:var(--muted)}
+.actions a, .actions button{margin-right:6px;padding:6px 10px;border-radius:6px;border:0;background:#eef2ff;color:var(--primary);text-decoration:none;cursor:pointer}
+.actions .delete{background:#fff0f0;color:var(--danger);border:1px solid rgba(239,68,68,0.08)}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--primary);border:1px solid rgba(37,99,235,0.12)}
+.search-input{padding:8px 12px;border-radius:8px;border:1px solid #e6eef7;width:300px}
+.controls{display:flex;gap:12px;align-items:center}
+.site-footer{max-width:1200px;margin:30px auto;padding:20px;color:var(--muted);text-align:center}
+
+@media(max-width:760px){
+	.cards{flex-direction:column}
+	.main-nav{display:none}
+	.search-input{width:100%}
+}
+

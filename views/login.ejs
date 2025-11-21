@@ -1,0 +1,22 @@
+<%- include('partials/header', { title: 'Login' }) %>
+
+<div class="page-header">
+  <h1>Login</h1>
+  <div></div>
+</div>
+
+<div class="table-wrap" style="max-width:420px;margin:0 auto;">
+  <form method="POST" action="/login">
+    <div style="margin-bottom:12px">
+      <label>Email</label>
+      <input name="email" type="email" required style="width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #e6eef7">
+    </div>
+    <div style="margin-bottom:12px">
+      <label>Password</label>
+      <input name="password" type="password" required style="width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #e6eef7">
+    </div>
+    <button class="btn" type="submit">Login</button>
+  </form>
+</div>
+
+<%- include('partials/footer') %>

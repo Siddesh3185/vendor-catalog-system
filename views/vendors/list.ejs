@@ -1,0 +1,44 @@
+<%- include('../partials/header', { title: 'Vendors' }) %>
+
+<div class="page-header">
+  <h1>Vendors</h1>
+  <div class="controls">
+    <input id="tableSearch" class="search-input" placeholder="Search vendors...">
+    <a href="/vendors/add" class="btn">Add Vendor</a>
+  </div>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% const list = vendors || []; %>
+      <% if (list && list.length) { %>
+        <% list.forEach((v, idx) => { %>
+          <tr>
+            <td><%= idx+1 %></td>
+            <td><%= v.name %></td>
+            <td><%= v.email || '-' %></td>
+            <td><%= v.phone || '-' %></td>
+            <td class="actions">
+              <a href="/vendors/edit/<%= v.id || v._id %>" class="btn ghost">Edit</a>
+              <button data-href="/vendors/delete/<%= v.id || v._id %>" data-id="<%= v.id || v._id %>" class="btn-delete delete">Delete</button>
+            </td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr><td colspan="5">No vendors found</td></tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>

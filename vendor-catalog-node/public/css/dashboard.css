@@ -1,0 +1,48 @@
+/* Dashboard background subtle parallax and motion */
+.header-bg{
+  position:relative;
+  background-color:#0ea5e9;
+  overflow:hidden;
+}
+.header-bg::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:url('/images/bg-dashboard.svg');
+  background-size:cover;
+  background-position:center;
+  transform-origin:center;
+  will-change:transform;
+  animation: bg-pan 28s ease-in-out infinite;
+  z-index:0;
+}
+.header-bg::after{
+  /* dark overlay for readability */
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0.34), rgba(0,0,0,0.34));
+  z-index:1;
+}
+.header-bg > .container{ z-index:2; position:relative; }
+
+@keyframes bg-pan{
+  0%{ transform: scale(1) translateX(0); }
+  25%{ transform: scale(1.02) translateX(-2%); }
+  50%{ transform: scale(1.035) translateX(-4%); }
+  75%{ transform: scale(1.02) translateX(-2%); }
+  100%{ transform: scale(1) translateX(0); }
+}
+
+/* floating subtle shapes to give depth */
+.header-bg .float-1, .header-bg .float-2{
+  position:absolute; border-radius:999px; opacity:0.08; pointer-events:none; z-index:0;
+}
+.header-bg .float-1{ width:360px; height:360px; background: #ffffff; right:-80px; top:-40px; animation: float-slow 12s ease-in-out infinite; }
+.header-bg .float-2{ width:220px; height:220px; background: #ffffff; left:-40px; bottom:-40px; animation: float-slower 18s ease-in-out infinite; }
+
+@keyframes float-slow{ 0%{ transform: translateY(0) } 50%{ transform: translateY(18px) } 100%{ transform: translateY(0) } }
+@keyframes float-slower{ 0%{ transform: translateY(0) } 50%{ transform: translateY(26px) } 100%{ transform: translateY(0) } }
+
+/* ensure header height remains comfortable */
+.header-bg .hero { padding-top:2.5rem; padding-bottom:2.5rem; }

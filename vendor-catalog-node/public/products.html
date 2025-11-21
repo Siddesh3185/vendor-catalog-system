@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-white border-b">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold">Products</h1>
+        <p class="text-sm text-slate-600">Catalog of products linked to vendors</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/" class="text-slate-600">Dashboard</a>
+        <a id="loginLink" href="/login.html" class="text-sm no-auth">Login</a>
+        <button id="logoutBtn" class="text-sm needs-auth" style="background:none;border:none">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-6">
+    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+      <input id="search" placeholder="Search products..." class="border p-2 rounded w-full md:w-1/2">
+      <div>
+        <button id="showAdd" class="bg-blue-600 text-white px-4 py-2 rounded needs-auth">Add Product</button>
+      </div>
+    </div>
+
+    <div id="formWrap" class="bg-white p-4 rounded shadow mb-4 hidden">
+      <h3 class="font-medium">Add / Edit Product</h3>
+      <form id="productForm" class="space-y-3 mt-3">
+        <p id="productFormMsg" class="text-sm text-red-600"></p>
+        <input type="hidden" name="id">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <select name="vendor_id" class="border p-2 rounded"><option value="">Select vendor</option></select>
+          <input name="product_name" placeholder="Product name" class="border p-2 rounded" required>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <input name="price" placeholder="Price" type="number" class="border p-2 rounded">
+          <input name="moq" placeholder="MOQ" type="number" class="border p-2 rounded">
+        </div>
+        <textarea name="description" placeholder="Description" class="border p-2 rounded w-full"></textarea>
+        <div class="flex gap-2">
+          <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Save</button>
+          <button type="button" id="cancel" class="px-4 py-2 rounded border">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow">
+      <table class="min-w-full table-auto">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="px-4 py-2">#</th>
+            <th class="px-4 py-2">Name</th>
+            <th class="px-4 py-2">Vendor</th>
+            <th class="px-4 py-2">Price</th>
+            <th class="px-4 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="productsList"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="/js/products.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

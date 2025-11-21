@@ -1,0 +1,45 @@
+<h2>Vendor List</h2>
+<%- include('../partials/header', { title: 'Products' }) %>
+
+<div class="page-header">
+    <h1>Products</h1>
+    <div class="controls">
+        <input id="tableSearch" class="search-input" placeholder="Search products...">
+        <a href="/products/add" class="btn">Add Product</a>
+    </div>
+</div>
+
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% const list = (typeof products !== 'undefined') ? products : (typeof items !== 'undefined' ? items : (typeof vendors !== 'undefined' ? vendors : [])); %>
+            <% if (list && list.length) { %>
+                <% list.forEach((p, idx) => { %>
+                    <tr>
+                        <td><%= idx+1 %></td>
+                        <td><%= p.name || p.title || '-' %></td>
+                        <td><%= p.category || p.type || '-' %></td>
+                        <td><%= p.price ? ('$' + p.price) : '-' %></td>
+                        <td class="actions">
+                            <a href="/products/edit/<%= p.id || p._id %>" class="btn ghost">Edit</a>
+                            <button data-href="/products/delete/<%= p.id || p._id %>" data-id="<%= p.id || p._id %>" class="btn-delete delete">Delete</button>
+                        </td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr><td colspan="5">No products found</td></tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../partials/footer') %>

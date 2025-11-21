@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vendor Catalog - Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <header class="header-bg relative text-white">
+    <div class="float-1" aria-hidden="true"></div>
+    <div class="float-2" aria-hidden="true"></div>
+    <div class="container mx-auto px-6 py-6 flex items-center justify-between relative z-10">
+      <div class="flex items-center gap-4">
+        <div class="text-2xl font-bold">Vendor Catalog</div>
+        <nav class="hidden md:flex space-x-4 text-slate-100 text-sm">
+          <a href="/" class="hover:underline">Dashboard</a>
+          <a href="/vendors.html" class="hover:underline">Vendors</a>
+          <a href="/products.html" class="hover:underline">Products</a>
+          <a href="/contacts.html" class="hover:underline">Contacts</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-3">
+        <a id="loginLink" href="/login.html" class="no-auth text-sm bg-white/10 px-3 py-1 rounded">Login</a>
+        <button id="logoutBtn" class="needs-auth text-sm bg-white/10 px-3 py-1 rounded">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-10">
+    <!-- Hero -->
+    <section class="bg-white rounded-lg shadow p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
+      <div class="flex-1">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900">Manage Vendors, Products, and Contacts with ease</h1>
+        <p class="mt-3 text-slate-700">A simple, fast interface for procurement teams to maintain vendor relationships and catalogs. Add vendors, assign products, and keep contact persons organized.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="/vendors.html" class="bg-indigo-600 text-white px-5 py-2 rounded shadow">View Vendors</a>
+          <a href="/products.html" class="bg-white border border-slate-200 px-5 py-2 rounded">Browse Products</a>
+        </div>
+      </div>
+      <div class="w-full md:w-80">
+        <div class="grid grid-cols-1 gap-4">
+          <div class="p-4 bg-slate-50 rounded">
+            <div class="text-sm text-slate-500">Vendors</div>
+            <div id="vendorsCount" class="text-2xl font-bold">—</div>
+          </div>
+          <div class="p-4 bg-slate-50 rounded">
+            <div class="text-sm text-slate-500">Products</div>
+            <div id="productsCount" class="text-2xl font-bold">—</div>
+          </div>
+          <div class="p-4 bg-slate-50 rounded">
+            <div class="text-sm text-slate-500">Contacts</div>
+            <div id="contactsCount" class="text-2xl font-bold">—</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent vendors -->
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold mb-3">Recent Vendors</h2>
+      <div id="recentVendors" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+    </section>
+    
+    <!-- Featured products gallery -->
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold mb-3">Featured Products</h2>
+      <div id="productGallery" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+    </section>
+  </main>
+
+  <script src="/js/auth.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
