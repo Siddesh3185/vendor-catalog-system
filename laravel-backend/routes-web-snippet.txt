@@ -1,0 +1,19 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VendorController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContactController;
+
+Route::get('/', function () {
+    return redirect('/vendors');
+});
+// Protect the admin resource routes with authentication
+Route::middleware(['auth'])->group(function () {
+    Route::resource('vendors', VendorController::class)->except(['show']);
+    Route::resource('products', ProductController::class)->except(['show']);
+    Route::resource('contacts', ContactController::class)->except(['show']);
+});
+
+// Include Breeze authentication routes (created by `php artisan breeze:install`)
+require __DIR__.'/auth.php';
